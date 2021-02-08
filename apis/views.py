@@ -51,7 +51,7 @@ class UserLoginView(BaseView):
             return self.response(message='아이디를 입력해주세요.', status=400)
         password = request.POST.get('password', '')
         if not password:
-            return self.response(message='비밀번호를 입력해주세요.' status=400)
+            return self.response(message='비밀번호를 입력해주세요.', status=400)
 
         user = authenticate(request, username=username, password=password)
         if user is None:
